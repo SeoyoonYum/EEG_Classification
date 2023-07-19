@@ -10,6 +10,14 @@ After accomplishing the goal, we'll struggle to classify several finger motions 
 
 - Anaconda 23.5.2
 - Tensorflow 2.13.0
+
+## How to run
+
+- Preprocess file preprocesses raw eeg file of edf format and saves as epoch file in fif format.
+- Classify file imports the epoch fif file, fits ml model, and predicts.
+- EEGModels python file is providing module of CNN based DL model.
+- Dl_EEGnet file is dealing with EEGnet model included in EEGModels module.
+
 ## Acknowledgements
 
  - [EEGnet](https://github.com/vlawhern/arl-eegmodels)
