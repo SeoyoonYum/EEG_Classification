@@ -1,0 +1,967 @@
+{
+    "Markers": [
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:38.460026+09:00",
+            "extras": {
+                "type_info": "setup",
+                "value_info": true
+            },
+            "index": 1,
+            "label": "sensor_check",
+            "originalEndDatetime": "2023-07-14T15:19:38.458300+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:36.004300+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:36.000476+09:00",
+            "type": "interval",
+            "uuid": "c21f1957-4d61-444a-a7c7-2075e4bcfb40",
+            "value": "true"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:40.872728+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 2,
+            "label": "phase_Instructions phase 1",
+            "originalEndDatetime": "2023-07-14T15:19:40.875100+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:38.460300+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:38.460026+09:00",
+            "type": "interval",
+            "uuid": "f400e995-442b-4b39-9df0-6c6c550388e5",
+            "value": 46511
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:38.460026+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                    "element_name": "published_date"
+                },
+                "type_info": "setup",
+                "value_info": true
+            },
+            "index": 3,
+            "label": "published_date",
+            "originalEndDatetime": "2023-07-14T15:19:38.459300+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:38.459300+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:38.460026+09:00",
+            "type": "instance",
+            "uuid": "12e5e6d1-89e5-4689-8cd8-d451e284ebd4",
+            "value": "2023-07-14T04:51:31.284338Z"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:40.872728+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255354,
+                    "element_name": "text_element_l74n",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46511,
+                    "phase_name": "Instructions phase 1"
+                },
+                "type_info": "element"
+            },
+            "index": 4,
+            "label": "text_element_l74n",
+            "originalEndDatetime": "2023-07-14T15:19:40.875400+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:38.460400+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:38.460026+09:00",
+            "type": "interval",
+            "uuid": "d65bd724-9276-4c69-a814-e0876553fbdf",
+            "value": "NULL"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:51.200255+09:00",
+            "extras": {
+                "type_info": "setup"
+            },
+            "index": 5,
+            "label": "active_period",
+            "originalEndDatetime": "2023-07-14T15:20:51.197000+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:40.876200+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:40.872728+09:00",
+            "type": "interval",
+            "uuid": "d0ffad7e-7f22-440c-9f1f-8cc1a6cbb167",
+            "value": "true"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:50.976405+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 6,
+            "label": "phase_rest",
+            "originalEndDatetime": "2023-07-14T15:19:50.976100+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:40.963000+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:40.966425+09:00",
+            "type": "interval",
+            "uuid": "db0f1e4c-182a-40a5-9748-2b491149e280",
+            "value": 46512
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:50.976405+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255355,
+                    "element_name": "rest_10s",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46512,
+                    "phase_name": "rest"
+                },
+                "type_info": "element"
+            },
+            "index": 7,
+            "label": "rest_10s",
+            "originalEndDatetime": "2023-07-14T15:19:50.976600+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:40.963200+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:40.966425+09:00",
+            "type": "interval",
+            "uuid": "d4165b56-f451-431e-989c-1a49dd00b333",
+            "value": "rest"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:51.991458+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255356,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46513,
+                    "phase_name": "1"
+                },
+                "type_info": "element"
+            },
+            "index": 8,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:19:51.992000+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:50.978400+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:50.976405+09:00",
+            "type": "interval",
+            "uuid": "52ca7874-3a52-432b-9a06-cca76a2fcc96",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:57.004256+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 9,
+            "label": "phase_1",
+            "originalEndDatetime": "2023-07-14T15:19:57.003300+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:50.978000+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:50.976405+09:00",
+            "type": "interval",
+            "uuid": "1276c891-8fd9-4d2a-b826-5ee26cc5928e",
+            "value": 46513
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:57.004256+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255357,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46513,
+                    "phase_name": "1"
+                },
+                "type_info": "element"
+            },
+            "index": 10,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:19:57.003600+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:51.993400+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:51.991458+09:00",
+            "type": "interval",
+            "uuid": "cbb7540c-6556-4827-b62d-d6af36b1c114",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:19:58.019308+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255358,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46514,
+                    "phase_name": "2"
+                },
+                "type_info": "element"
+            },
+            "index": 11,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:19:58.016701+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:57.004900+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:57.004256+09:00",
+            "type": "interval",
+            "uuid": "94555e51-8428-4056-8c9b-0d81ccbbd400",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:03.024298+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 12,
+            "label": "phase_2",
+            "originalEndDatetime": "2023-07-14T15:20:03.028100+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:57.004700+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:57.004256+09:00",
+            "type": "interval",
+            "uuid": "104cec51-4280-4697-9e0f-53bf0d2f1d4c",
+            "value": 46514
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:03.032106+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255359,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46514,
+                    "phase_name": "2"
+                },
+                "type_info": "element"
+            },
+            "index": 13,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:03.028300+09:00",
+            "originalStartDatetime": "2023-07-14T15:19:58.018100+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:19:58.019308+09:00",
+            "type": "interval",
+            "uuid": "eeb72937-e3bc-4e5b-ad2d-e040799ecd20",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:09.052149+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 14,
+            "label": "phase_3",
+            "originalEndDatetime": "2023-07-14T15:20:09.054000+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:03.029300+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:03.032106+09:00",
+            "type": "interval",
+            "uuid": "1b0d7d41-0c8c-42bc-8bae-e07a02d4706f",
+            "value": 46515
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:04.047159+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255360,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46515,
+                    "phase_name": "3"
+                },
+                "type_info": "element"
+            },
+            "index": 15,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:04.045600+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:03.029500+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:03.032106+09:00",
+            "type": "interval",
+            "uuid": "988c4e5d-4297-4bdf-8d02-b4e60e34d316",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:09.052149+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255361,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46515,
+                    "phase_name": "3"
+                },
+                "type_info": "element"
+            },
+            "index": 16,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:09.054200+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:04.046700+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:04.047159+09:00",
+            "type": "interval",
+            "uuid": "87e8d145-f2d9-4bfb-8f31-4f8ee413b78e",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:10.067202+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255362,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46516,
+                    "phase_name": "4"
+                },
+                "type_info": "element"
+            },
+            "index": 17,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:10.069100+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:09.055000+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:09.052149+09:00",
+            "type": "interval",
+            "uuid": "e406a9c1-c350-4d3e-9b21-43b25fe56b30",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:15.080000+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 18,
+            "label": "phase_4",
+            "originalEndDatetime": "2023-07-14T15:20:15.083300+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:09.054800+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:09.052149+09:00",
+            "type": "interval",
+            "uuid": "8acdc911-9376-4707-a845-c4951030ecf7",
+            "value": 46516
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:15.080000+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255363,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46516,
+                    "phase_name": "4"
+                },
+                "type_info": "element"
+            },
+            "index": 19,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:15.083700+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:10.070400+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:10.067202+09:00",
+            "type": "interval",
+            "uuid": "3e10d0a2-b32b-4a7e-86d9-17f73da0f56d",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:21.100042+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 20,
+            "label": "phase_5",
+            "originalEndDatetime": "2023-07-14T15:20:21.100600+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:15.084700+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:15.087808+09:00",
+            "type": "interval",
+            "uuid": "17dd6ef4-10a2-4956-ba9c-a96b207065bd",
+            "value": 46517
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:16.095052+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255364,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46517,
+                    "phase_name": "5"
+                },
+                "type_info": "element"
+            },
+            "index": 21,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:16.094700+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:15.084900+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:15.087808+09:00",
+            "type": "interval",
+            "uuid": "0c3f1992-9707-4888-811b-ebcd7f0aa2df",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:21.100042+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255365,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46517,
+                    "phase_name": "5"
+                },
+                "type_info": "element"
+            },
+            "index": 22,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:21.100800+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:16.096500+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:16.095052+09:00",
+            "type": "interval",
+            "uuid": "85f01860-ca7a-4a28-baa9-1b237c282a7f",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:22.107287+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255366,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46518,
+                    "phase_name": "6"
+                },
+                "type_info": "element"
+            },
+            "index": 23,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:22.111000+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:21.102600+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:21.100042+09:00",
+            "type": "interval",
+            "uuid": "bb7e0e9e-7355-4554-9c2e-ce770776e080",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:27.120085+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 24,
+            "label": "phase_6",
+            "originalEndDatetime": "2023-07-14T15:20:27.122500+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:21.102300+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:21.100042+09:00",
+            "type": "interval",
+            "uuid": "08286779-ed58-4411-ac11-17c7f4350191",
+            "value": 46518
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:27.120085+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255367,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46518,
+                    "phase_name": "6"
+                },
+                "type_info": "element"
+            },
+            "index": 25,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:27.122800+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:22.113200+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:22.115095+09:00",
+            "type": "interval",
+            "uuid": "dc7cd033-4c0a-4db8-b13e-9cc4b44bd2ea",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:33.140127+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 26,
+            "label": "phase_7",
+            "originalEndDatetime": "2023-07-14T15:20:33.143200+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:27.123900+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:27.120085+09:00",
+            "type": "interval",
+            "uuid": "588b4782-f39d-497e-af7f-5e56cf9339e5",
+            "value": 46519
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:28.135137+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255368,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46519,
+                    "phase_name": "7"
+                },
+                "type_info": "element"
+            },
+            "index": 27,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:28.133000+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:27.124200+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:27.127893+09:00",
+            "type": "interval",
+            "uuid": "f8c38398-9e66-4492-8fae-1155a9d6f942",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:33.140127+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255369,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46519,
+                    "phase_name": "7"
+                },
+                "type_info": "element"
+            },
+            "index": 28,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:33.143400+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:28.133800+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:28.135137+09:00",
+            "type": "interval",
+            "uuid": "f446a914-cfa6-4108-b6bd-6b5787ed299f",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:39.160170+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 29,
+            "label": "phase_8",
+            "originalEndDatetime": "2023-07-14T15:20:39.163700+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:33.144200+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:33.147935+09:00",
+            "type": "interval",
+            "uuid": "79904941-8429-4c02-8dab-f2bf036a5775",
+            "value": 46520
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:34.155180+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255370,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46520,
+                    "phase_name": "8"
+                },
+                "type_info": "element"
+            },
+            "index": 30,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:34.153400+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:33.144400+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:33.147935+09:00",
+            "type": "interval",
+            "uuid": "963bd42b-ea3b-4507-90b6-ff3987794510",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:39.160170+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255371,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46520,
+                    "phase_name": "8"
+                },
+                "type_info": "element"
+            },
+            "index": 31,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:39.163800+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:34.155000+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:34.155180+09:00",
+            "type": "interval",
+            "uuid": "01e67236-7cca-43ea-9252-ed898607b73e",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:45.188020+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 32,
+            "label": "phase_9",
+            "originalEndDatetime": "2023-07-14T15:20:45.184700+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:39.164600+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:39.167978+09:00",
+            "type": "interval",
+            "uuid": "8d877591-9167-4a69-a1cb-a5d17b37b47a",
+            "value": 46521
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:40.175222+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255372,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46521,
+                    "phase_name": "9"
+                },
+                "type_info": "element"
+            },
+            "index": 33,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:40.179100+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:39.164701+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:39.167978+09:00",
+            "type": "interval",
+            "uuid": "0f89371e-32e1-4ed4-9698-39b173009017",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:45.188020+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255373,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46521,
+                    "phase_name": "9"
+                },
+                "type_info": "element"
+            },
+            "index": 34,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:45.185200+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:40.180500+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:40.183030+09:00",
+            "type": "interval",
+            "uuid": "0834507c-aed3-433f-a3d0-5852a472ed80",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:51.200255+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                },
+                "value_info": true
+            },
+            "index": 35,
+            "label": "phase_10",
+            "originalEndDatetime": "2023-07-14T15:20:51.197201+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:45.186300+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:45.188020+09:00",
+            "type": "interval",
+            "uuid": "c1cb030a-cb8e-421d-a2ab-c9d38e93e1ff",
+            "value": 46522
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:46.195265+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255374,
+                    "element_name": "text_element_0bc1",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 0,
+                    "phase_id": 46522,
+                    "phase_name": "10"
+                },
+                "type_info": "element"
+            },
+            "index": 36,
+            "label": "text_element_0bc1",
+            "originalEndDatetime": "2023-07-14T15:20:46.192000+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:45.186400+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:45.188020+09:00",
+            "type": "interval",
+            "uuid": "c7a83de7-1b39-4a96-b9e6-d18cef7f5414",
+            "value": "1"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:51.200255+09:00",
+            "extras": {
+                "action_info": [
+                ],
+                "label_info": {
+                    "element_id": 255375,
+                    "element_name": "text_element_wssy",
+                    "element_type": "text",
+                    "loop_id": 1,
+                    "order_position": 1,
+                    "phase_id": 46522,
+                    "phase_name": "10"
+                },
+                "type_info": "element"
+            },
+            "index": 37,
+            "label": "text_element_wssy",
+            "originalEndDatetime": "2023-07-14T15:20:51.197400+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:46.193200+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:46.195265+09:00",
+            "type": "interval",
+            "uuid": "454869e9-e9da-46be-9e6a-b87fcb95e9ee",
+            "value": "wait"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:51.192447+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                    "element_name": "last_stimuli"
+                },
+                "type_info": "setup",
+                "value_info": true
+            },
+            "index": 38,
+            "label": "last_stimuli",
+            "originalEndDatetime": "2023-07-14T15:20:51.195800+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:51.195800+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:51.192447+09:00",
+            "type": "instance",
+            "uuid": "8fc4104a-6f85-457d-ac01-3083c4bca260",
+            "value": "2023-07-14T15:20:51.195+09:00"
+        },
+        {
+            "deleted": false,
+            "endDatetime": "2023-07-14T15:20:51.200255+09:00",
+            "extras": {
+                "action_info": {
+                },
+                "label_info": {
+                    "element_name": "finish_running"
+                },
+                "type_info": "setup",
+                "value_info": true
+            },
+            "index": 39,
+            "label": "finish_running",
+            "originalEndDatetime": "2023-07-14T15:20:51.197800+09:00",
+            "originalStartDatetime": "2023-07-14T15:20:51.197800+09:00",
+            "port": "labs",
+            "startDatetime": "2023-07-14T15:20:51.200255+09:00",
+            "type": "instance",
+            "uuid": "a390b022-523e-43ff-bffc-924df13d0375",
+            "value": "2023-07-14T15:20:51.197+09:00"
+        }
+    ],
+    "connectionType": "dongle",
+    "demographics": {
+        "birthday": "2002-01-01",
+        "countryOfInfluence": {
+            "iso": "KR",
+            "printable": "Republic of Korea"
+        },
+        "countryOfResidence": {
+            "iso": "KR",
+            "printable": "Republic of Korea"
+        },
+        "education": "Bachelor's degree",
+        "gender": "F",
+        "handedness": "Right",
+        "languageAbility": "Bilingual",
+        "meditation": {
+            "answer": false,
+            "duration_frequency": "Day",
+            "length_unit": "Month"
+        },
+        "musicalAbility": "None",
+        "profession": "Computer and mathematical"
+    },
+    "exportApp": "com.emotiv.emotivpro",
+    "exportTime": "2023-07-14T15:57:15.870+09:00",
+    "headsetType": "EPOCX",
+    "mappings": null,
+    "montageType": "UNKNOWN",
+    "recordId": "70382602-2d44-40fc-acc6-1c99a07dd123",
+    "user": "beomseok-kim"
+}
