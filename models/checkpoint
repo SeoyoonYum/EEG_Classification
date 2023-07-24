@@ -1,0 +1,2 @@
+model_checkpoint_path: "EEGnet_weight_0.95"
+all_model_checkpoint_paths: "EEGnet_weight_0.95"
