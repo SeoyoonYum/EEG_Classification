@@ -11,7 +11,7 @@ import matplotlib.animation as animation
 import realtime_blink_preprocessing as pre
 import realtime_blink_classification as cl
 
-import send_ros as send
+#import send_ros as send
 
 
 # Example channel names
@@ -40,7 +40,7 @@ def get_chunk():
     eeg_data = np.delete(eeg_data,14,0)
     eeg_data = np.delete(eeg_data,14,0)
     
-    print(f"Shape of chunk : {eeg_data.shape}")
+    #print(f"Shape of chunk : {eeg_data.shape}")
     
     return eeg_data
 
@@ -52,8 +52,8 @@ def make_time_window():
     for i in range(4):
         list = np.append(list, get_chunk(),axis = 1)
     
-    print(f"Time window shape : {list.shape}")
-    print(f"Window {list}")
+    #print(f"Time window shape : {list.shape}")
+    #print(f"Window {list}")
     return list
 
 def next_time_window(input_list):
@@ -62,7 +62,7 @@ def next_time_window(input_list):
     """
     list = input_list[:,16:]
     list = np.append(list, get_chunk(),axis = 1)
-    print(f"Next time window shape : {list.shape}")
+    #print(f"Next time window shape : {list.shape}")
     
     return list
 """
@@ -127,7 +127,7 @@ inlet = StreamInlet(streams[0])
 
 def read_eeg():
     """
-    Reading a single eeg window
+    Reading a single eeg window (0.5S)
     """
     first_window = True
     
@@ -139,7 +139,7 @@ def read_eeg():
             first_window = False
         else:
             time_window = next_time_window(time_window)
-        print(f"shape of window{time_window.shape}")
+        #print(f"shape of window{time_window.shape}")
         
         print("----------------------------------------------------------")
         yield time_window
@@ -172,25 +172,30 @@ def realtime_blink_predict():
     """
     data_reader = read_eeg()
     queue = []
+    
+
     while True:
 
         eeg_data = next(data_reader)
         print(np.mean(eeg_data[0]))
-        print(np.mean(eeg_data[13]))
+        #print(np.mean(eeg_data[13]))
         # Preprocessing step
-        if np.mean(eeg_data[0]) > 4420 and 1 not in queue:
+        if np.mean(eeg_data[0]) > 4390 and 1 not in queue:
+            
             queue.append(1)
             if len(queue) > 3:
                 queue.pop()
-            send_data(1)
+            
+            
             yield 1
         else:
             queue.append(0)
             if len(queue) > 3:
                 queue.pop()
             
-            send_data(0)
+            
             yield 0
+        
 
 def preprocess(data):
     """
@@ -211,13 +216,20 @@ def send_data(data):
     """
     Send prediction data to arduino or simulation
     """
-    send.input_publisher(data)
+    pass
+    #send.input_publisher(data)
     
 
 if __name__ == "__main__":
 
     reader = realtime_blink_predict()
+    check = 0
     while True:
         prediction = next(reader)
         print(prediction)
-        send_data(prediction)
+        if check != prediction and check == 0:
+            print("Blink !!")
+            send_data()
+        check = prediction
+            
+        
