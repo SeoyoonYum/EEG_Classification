@@ -2,7 +2,7 @@ from pylsl import StreamInlet, resolve_stream, StreamInfo
 import numpy as np
 import mne
 import time
-
+import socket
 """
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -180,7 +180,7 @@ def realtime_blink_predict():
         print(np.mean(eeg_data[0]))
         #print(np.mean(eeg_data[13]))
         # Preprocessing step
-        if np.mean(eeg_data[0]) > 4390 and 1 not in queue:
+        if np.mean(eeg_data[0]) > 4400 and 1 not in queue:
             
             queue.append(1)
             if len(queue) > 3:
@@ -216,20 +216,46 @@ def send_data(data):
     """
     Send prediction data to arduino or simulation
     """
-    pass
+    
+
+    
+    if data == 1:
+        send = "o"
+        conn.sendall(send.encode())
+    else:
+        send = "p"
+        conn.sendall(send.encode())
+
+
     #send.input_publisher(data)
     
 
 if __name__ == "__main__":
-
+    
+    host = '0.0.0.0' # Listen on all available interfaces
+    port = 12345     # Use port 12345
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind((host, port))
+    s.listen(1)
+    print(f"Listening on {host}:{port}")
+    conn, addr = s.accept()
+    print(f"Connection from {addr}")
+    
     reader = realtime_blink_predict()
     check = 0
+    hand = 1 # 1 means spread, 0 means grip
     while True:
         prediction = next(reader)
         print(prediction)
         if check != prediction and check == 0:
             print("Blink !!")
-            send_data()
+            send_data(hand)
+            if hand == 1:
+                
+                hand = 0
+            else:
+                hand = 1
         check = prediction
             
         
+    conn.close()
