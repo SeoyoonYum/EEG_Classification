@@ -11,6 +11,8 @@ import matplotlib.animation as animation
 import realtime_blink_preprocessing as pre
 import realtime_blink_classification as cl
 
+import serial_send as serial
+
 #import send_ros as send
 
 
@@ -120,7 +122,8 @@ def plot_data(input):
 # first resolve an EEG stream on the lab network
 print("looking for an EEG stream...")
 streams = resolve_stream('type', 'EEG')
-
+for stream in streams:
+    print(stream.name())
 # create a new inlet to read from the stream
 inlet = StreamInlet(streams[0])
 
@@ -232,6 +235,8 @@ def send_data(data):
 
 if __name__ == "__main__":
     
+    """
+    
     host = '0.0.0.0' # Listen on all available interfaces
     port = 12345     # Use port 12345
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -240,7 +245,8 @@ if __name__ == "__main__":
     print(f"Listening on {host}:{port}")
     conn, addr = s.accept()
     print(f"Connection from {addr}")
-    
+    """
+
     reader = realtime_blink_predict()
     check = 0
     hand = 1 # 1 means spread, 0 means grip
@@ -249,13 +255,12 @@ if __name__ == "__main__":
         print(prediction)
         if check != prediction and check == 0:
             print("Blink !!")
-            send_data(hand)
+            serial.send(hand)
             if hand == 1:
-                
                 hand = 0
             else:
                 hand = 1
         check = prediction
             
         
-    conn.close()
+    #conn.close()
