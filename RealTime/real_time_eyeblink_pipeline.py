@@ -1,6 +1,8 @@
 from pylsl import StreamInlet, resolve_stream, StreamInfo
 import numpy as np
 import mne
+import time
+import socket
 """
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -104,18 +106,73 @@ def realtime_predict():
         eeg_data = next(data_reader)
 
         
-        # Convert the NumPy array to MNE epoch object
-        eeg_epoch = mne.EpochsArray(eeg_data, info)
+        # Convert the NumPy array to MNE Raw object
+        eeg_data = mne.io.RawArray(eeg_data, info)
+        
 
         # Preprocessing step
-        preprocessed_data = preprocess(eeg_epoch)
+        preprocessed_data = preprocess(eeg_data)
 
         # Classifing step
         predicted_class = classify(preprocessed_data)
         print(predicted_class)
         yield predicted_class
 
+def realtime_blink_predict():
+    """
+    Real-time processing pipeline (main function)
+    """
+    data_reader = read_eeg()
+    queue = []
+    consecutive_blink_count = 0
+    last_blink_time = None
 
+    while True:
+
+        eeg_data = next(data_reader)
+        print(np.mean(eeg_data[0]))
+        #print(np.mean(eeg_data[13]))
+
+        if np.mean(eeg_data[0]) > 4390 and 1 not in queue:
+            current_time = time.time()
+            if last_blink_time is None:
+                last_blink_time = current_time
+            else:
+                time_interval = current_time - last_blink_time
+                
+                if time_interval <= 2:
+                    consecutive_blink_count += 1
+                else:
+                    consecutive_blink_count = 0
+            
+            last_blink_time = current_time
+            
+            if consecutive_blink_count == 2:
+                queue.append(1)
+                if len(queue) > 2:
+                    queue.pop()
+                yield 1
+            
+            if consecutive_blink_count == 3:
+                queue.append(2)
+                if len(queue) > 2:
+                    queue.pop()
+                yield 2
+
+            if consecutive_blink_count == 4:
+                queue.append(3)
+                if len(queue) > 2:
+                    queue.pop()
+                yield 3
+        else:
+            consecutive_blink_count = 0
+            queue.append(0)
+            if len(queue) > 2:
+                queue.pop()
+            
+            
+            yield 0
+        
 
 def preprocess(data):
     """
@@ -134,7 +191,7 @@ def classify(data):
 
 def send_data(data):
     """
-    Send prediction data to arduino or simulation
+    Send prediction data to simulation
     """
     
 
@@ -152,23 +209,25 @@ def send_data(data):
 
 if __name__ == "__main__":
     
+    """
     
+    host = '0.0.0.0' # Listen on all available interfaces
+    port = 12345     # Use port 12345
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind((host, port))
+    s.listen(1)
+    print(f"Listening on {host}:{port}")
+    conn, addr = s.accept()
+    print(f"Connection from {addr}")
+    """
 
-    reader = realtime_predict()
-    check = 0
-    hand = 1 # 1 means spread, 0 means grip
+    reader = realtime_blink_predict()
+    
     while True:
         try:
             prediction = next(reader)
             print(prediction)
-            if check != prediction and check == 0:
-                print("Blink !!")
-                serial.send(hand)
-                if hand == 1:
-                    hand = 0
-                else:
-                    hand = 1
-            check = prediction
+            serial.send(prediction)
         except KeyboardInterrupt:
             serial.ser.close()
             
