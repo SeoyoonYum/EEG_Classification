@@ -3,23 +3,13 @@ import numpy as np
 import mne
 import time
 import socket
-"""
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-"""
-
-import realtime_blink_preprocessing as pre
-import realtime_blink_classification as cl
 
 import serial_send as serial
 
-#import send_ros as send
-
-
-# Example channel names
+# Headset Channel names
 ch_names = ['AF3', 'F7', 'F3', 'FC5', 'T7', 'P7', 'O1','O2', 'P8', 'T8', 'FC6', 'F4', 'F8', 'AF4']
 
-# Example sampling rate
+# Headset sampling rate
 sfreq = 128  # Hz
 
 # Create the MNE Info object
@@ -28,6 +18,7 @@ info = mne.create_info(ch_names=ch_names, sfreq=sfreq)
 def get_chunk():
     """
     returning chunk of 0.125s (14 channels)
+    return numpy array data type
     """
     list = []
     for i in range(16):
@@ -41,8 +32,6 @@ def get_chunk():
     eeg_data = np.delete(eeg_data,0,0)
     eeg_data = np.delete(eeg_data,14,0)
     eeg_data = np.delete(eeg_data,14,0)
-    
-    #print(f"Shape of chunk : {eeg_data.shape}")
     
     return eeg_data
 
@@ -71,8 +60,6 @@ def next_time_window(input_list):
 # first resolve an EEG stream on the lab network
 print("looking for an EEG stream...")
 streams = resolve_stream('type', 'EEG')
-for stream in streams:
-    print(stream.name())
 # create a new inlet to read from the stream
 inlet = StreamInlet(streams[0])
 
@@ -95,32 +82,10 @@ def read_eeg():
         
         print("----------------------------------------------------------")
         yield time_window
-    
-def realtime_predict():
-    """
-    Real-time processing pipeline (main function)
-    """
-    data_reader = read_eeg()
-    while True:
-
-        eeg_data = next(data_reader)
-
-        
-        # Convert the NumPy array to MNE Raw object
-        eeg_data = mne.io.RawArray(eeg_data, info)
-        
-
-        # Preprocessing step
-        preprocessed_data = preprocess(eeg_data)
-
-        # Classifing step
-        predicted_class = classify(preprocessed_data)
-        print(predicted_class)
-        yield predicted_class
-
+  
 def realtime_blink_predict():
     """
-    Real-time processing pipeline (main function)
+    Real-time processing pipeline for eyeblink (main processing function)
     """
     data_reader = read_eeg()
     queue = []
@@ -131,7 +96,6 @@ def realtime_blink_predict():
 
         eeg_data = next(data_reader)
         print(np.mean(eeg_data[0]))
-        #print(np.mean(eeg_data[13]))
 
         if np.mean(eeg_data[0]) > 4390 and 1 not in queue:
             current_time = time.time()
@@ -174,28 +138,10 @@ def realtime_blink_predict():
             yield 0
         
 
-def preprocess(data):
+def send_gazebo(data):
     """
-    data preprocessing function
+    Send prediction data to gazebo simulation
     """
-    pass
-    return pre.preprocess(data)
-
-def classify(data):
-    """
-    data classification function
-    """
-    pass
-    #time.sleep(3)
-    return cl.classification(data)
-
-def send_data(data):
-    """
-    Send prediction data to simulation
-    """
-    
-
-    
     if data == 1:
         send = "o"
         conn.sendall(send.encode())
@@ -210,7 +156,8 @@ def send_data(data):
 if __name__ == "__main__":
     
     """
-    
+    TCP/IP protocol code for using simulation
+
     host = '0.0.0.0' # Listen on all available interfaces
     port = 12345     # Use port 12345
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -232,4 +179,4 @@ if __name__ == "__main__":
             serial.ser.close()
             
         
-    #conn.close()
+    #conn.close()  #connection closing for TCP/IP
