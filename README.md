@@ -40,3 +40,5 @@ After accomplishing the goal, we'll struggle to classify several finger motions 
 
 
 - [@Minjoo Kim](https://github.com/minjoo0729)
+
+- [@SeoyoonYum](https://github.com/SeoyoonYum)
