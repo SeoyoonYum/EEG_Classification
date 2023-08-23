@@ -103,7 +103,7 @@ def realtime_predict():
 
         eeg_data = next(data_reader)
 
-        
+
         # Convert the NumPy array to MNE epoch object
         eeg_epoch = mne.EpochsArray(eeg_data, info)
 
@@ -148,11 +148,9 @@ def send_data(data):
 
 
     #send.input_publisher(data)
-    
+
 
 if __name__ == "__main__":
-    
-    
 
     reader = realtime_predict()
     check = 0

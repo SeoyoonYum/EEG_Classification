@@ -1,7 +1,7 @@
 import serial
 
-#bluetooth_port = '/dev/tty.Bluetooth-Incoming-Port'  # Replace with the correct Bluetooth serial port on your system
-with serial.Serial("/dev/tty.usbserial-110", baudrate=9600, timeout=1) as ser:
+bluetooth_port = '/dev/tty.Bluetooth-Incoming-Port'  # Replace with the correct Bluetooth serial port on your system
+with serial.Serial(bluetooth_port, baudrate=9600, timeout=1) as ser:
     def send(data):
         try:
             

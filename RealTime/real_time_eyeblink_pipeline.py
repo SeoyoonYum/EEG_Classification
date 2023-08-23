@@ -97,43 +97,65 @@ def realtime_blink_predict():
         eeg_data = next(data_reader)
         print(np.mean(eeg_data[0]))
 
-        if np.mean(eeg_data[0]) > 4390 and 1 not in queue:
+        if np.mean(eeg_data[0]) > 4380:
+
+            if 1 in queue:
+                yield 0
+                continue
+            
+            """
+            
             current_time = time.time()
             if last_blink_time is None:
                 last_blink_time = current_time
             else:
                 time_interval = current_time - last_blink_time
                 
-                if time_interval <= 2:
+                if time_interval <= 3 and time_interval >= 0.25:
                     consecutive_blink_count += 1
                 else:
                     consecutive_blink_count = 0
             
-            last_blink_time = current_time
+                last_blink_time = current_time
             
-            if consecutive_blink_count == 2:
-                queue.append(1)
+            if consecutive_blink_count == 1:
+                
                 if len(queue) > 2:
                     queue.pop()
+                queue.insert(0,1)
                 yield 1
             
-            if consecutive_blink_count == 3:
-                queue.append(2)
+            elif consecutive_blink_count == 2:
                 if len(queue) > 2:
                     queue.pop()
+                queue.insert(0,2)
                 yield 2
 
-            if consecutive_blink_count == 4:
-                queue.append(3)
+            elif consecutive_blink_count == 3:
                 if len(queue) > 2:
                     queue.pop()
+                queue.insert(0,3)
+
                 yield 3
+            else:
+                if len(queue) > 2:
+                    queue.pop()
+                queue.insert(0,0)
+            
+                yield 0
+            """
+            if len(queue) > 2:
+                    queue.pop()
+            queue.insert(0,1)
+            
+            yield 1
+            
         else:
             consecutive_blink_count = 0
-            queue.append(0)
+            
             if len(queue) > 2:
                 queue.pop()
-            
+            queue.insert(0, 0)
             
             yield 0
         
@@ -152,7 +174,6 @@ def send_gazebo(data):
 
     #send.input_publisher(data)
     
-
 if __name__ == "__main__":
     
     """
@@ -169,12 +190,23 @@ if __name__ == "__main__":
     """
 
     reader = realtime_blink_predict()
-    
+    prediction = next(reader)
+
     while True:
         try:
             prediction = next(reader)
-            print(prediction)
-            serial.send(prediction)
+            if prediction == 0:
+                print(prediction)
+            else:
+                count = 1
+                for i in range(24):
+                    prediction = next(reader)
+                    if prediction == 1:
+                        count += 1
+                if count > 3:
+                    count = 3
+                print(count)
+                #serial.send(count)
         except KeyboardInterrupt:
             serial.ser.close()
             
