@@ -200,7 +200,7 @@ if __name__ == "__main__":
             else:
                 count = 1
                 for i in range(32):
-                    prediction = next(reader)
+                    prediction = net(reader)
                     if prediction == 1:
                         count += 1
                 if count > 3:
