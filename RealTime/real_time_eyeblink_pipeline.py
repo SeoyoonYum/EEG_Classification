@@ -199,14 +199,14 @@ if __name__ == "__main__":
                 print(prediction)
             else:
                 count = 1
-                for i in range(24):
+                for i in range(32):
                     prediction = next(reader)
                     if prediction == 1:
                         count += 1
                 if count > 3:
                     count = 3
                 print(count)
-                #serial.send(count)
+                serial.send(count)
         except KeyboardInterrupt:
             serial.ser.close()
             

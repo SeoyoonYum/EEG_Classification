@@ -1,18 +1,23 @@
 import serial
+import time
 
-bluetooth_port = '/dev/tty.Bluetooth-Incoming-Port'  # Replace with the correct Bluetooth serial port on your system
-with serial.Serial(bluetooth_port, baudrate=9600, timeout=1) as ser:
-    def send(data):
-        try:
-            
-            if data == 1:
-                data_to_send = "open"
-                ser.write(data_to_send.encode())
-            if data == 2:
-                data_to_send = "grip"
-                ser.write(data_to_send.encode())
-            if data == 3:
-                data_to_send = "pinch"
-                ser.write(data_to_send.encode())
-        except KeyboardInterrupt:
-            ser.close()
+def send(data):
+    
+    port = "COM4"
+    baudrate = 9600
+    # 블루투스 시리얼 연결 생성
+    bluetooth = serial.Serial(port, baudrate)
+    if data == 1:
+        data = "open"
+    elif data == 2:
+        data = "grip"
+    elif data == 3:
+        data = "pinch"
+    
+    # 데이터 전송
+    bluetooth.write(data.encode())  # 데이터를 바이트로 인코딩하여 전송합니다.
+   
+    # 시리얼 연결 종료
+    bluetooth.close()
+
+
