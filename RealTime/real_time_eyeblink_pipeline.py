@@ -71,7 +71,7 @@ def read_eeg():
     first_window = True
     
     while True:
-        print("----------------------------------------------------------")
+        #print("----------------------------------------------------------")
         
         if first_window:
             time_window = make_time_window()
@@ -80,7 +80,7 @@ def read_eeg():
             time_window = next_time_window(time_window)
         #print(f"shape of window{time_window.shape}")
         
-        print("----------------------------------------------------------")
+        #print("----------------------------------------------------------")
         yield time_window
   
 def realtime_blink_predict():
@@ -95,7 +95,7 @@ def realtime_blink_predict():
     while True:
 
         eeg_data = next(data_reader)
-        print(np.mean(eeg_data[0]))
+        print(f"V : {np.mean(eeg_data[0])}")
 
         if np.mean(eeg_data[0]) > 4380:
 
@@ -196,17 +196,18 @@ if __name__ == "__main__":
         try:
             prediction = next(reader)
             if prediction == 0:
-                print(prediction)
+                pass
+                #print(prediction)
             else:
                 count = 1
-                for i in range(32):
-                    prediction = net(reader)
+                for i in range(40):
+                    prediction = next(reader)
                     if prediction == 1:
                         count += 1
-                if count > 3:
-                    count = 3
-                print(count)
-                serial.send(count)
+                if count > 4:
+                    count = 4
+                print(f"----------------- Blinked {count} times !! -----------------")
+                #serial.send(count)
         except KeyboardInterrupt:
             serial.ser.close()
             
