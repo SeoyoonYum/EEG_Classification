@@ -97,7 +97,7 @@ def realtime_blink_predict():
         eeg_data = next(data_reader)
         print(f"V : {np.mean(eeg_data[0])}")
 
-        if np.mean(eeg_data[0]) > 4380:
+        if np.mean(eeg_data[0]) > 4280:
 
             if 1 in queue:
                 yield 0
@@ -145,7 +145,7 @@ def realtime_blink_predict():
                 yield 0
             """
             if len(queue) > 2:
-                    queue.pop()
+                queue.pop()
             queue.insert(0,1)
             
             yield 1
@@ -191,13 +191,14 @@ if __name__ == "__main__":
 
     reader = realtime_blink_predict()
     prediction = next(reader)
+    check_buff = None
 
     while True:
         try:
             prediction = next(reader)
             if prediction == 0:
                 pass
-                #print(prediction)
+                print(prediction)
             else:
                 count = 1
                 for i in range(40):
@@ -207,7 +208,28 @@ if __name__ == "__main__":
                 if count > 4:
                     count = 4
                 print(f"----------------- Blinked {count} times !! -----------------")
-                #serial.send(count)
+                if check_buff != None:
+                    if check_buff == 1:
+                        if count == 2:
+                            serial.send(count)
+                            check_buff = count
+                            print(count)
+                    elif check_buff == 3:
+                        if count == 4:
+                            serial_send(count)
+                            check_buff = count
+                            print(count)
+                    elif check_buff == 2 or check_buff == 4:
+                        if count == 1 or count == 3:
+                            serial.send(count)
+                            check_buff = count
+                            print(count)
+                else:
+                    if count == 1 or count == 3:
+                        serial.send(count)
+                        check_buff = count
+                        print(count)
+                    
         except KeyboardInterrupt:
             serial.ser.close()
             
